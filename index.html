@@ -196,8 +196,8 @@
     main {
         padding-top: 80px;
     }
-    .hero {
-    height: 100vh;
+   .hero {
+   height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -205,10 +205,8 @@
     text-align: center;
     position: relative;
     overflow: hidden;
-    background: url('preview.png') center center/contain no-repeat;
-    background-size: 50%;
-    background-color: rgba(0, 0, 0, 0.7);
 }
+
 
 .hero::after {
     content: '';
@@ -217,7 +215,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Adjust transparency here */
+    background-color: rgba(0, 0, 0, 0.3); /* Adjust transparency here */
     z-index: 1;
 }
 
@@ -618,10 +616,20 @@
     }
     .social-links {
         display: flex;
+        align-items: center;
         justify-content: center;
         gap: 1.5rem;
         margin: 1rem 0;
     }
+    .social-icon i {
+        font-size: 24px;
+        vertical-align: middle;
+    }
+
+    .social-icon img {
+        vertical-align: middle;
+}
+
     .social-icon {
         color: var(--neon-purple);
         font-size: 1.5rem;
@@ -877,8 +885,40 @@ img, .team-member, .tech-card {
   }
 }
 
+
+.neon-dotted-line {
+    border: none;
+    border-top: 2px dotted var(--neon-purple);
+    width: 60%;
+    margin: 2rem auto 1rem;
+    box-shadow: 0 0 10px var(--neon-purple);
+}
+
+.achievement-list {
+    list-style: none;
+    padding: 0;
+    max-width: 700px;
+    margin: 2rem auto;
+    font-size: 1.2rem;
+    color: var(--neon-blue);
+    text-shadow: 0 0 5px var(--neon-blue);
+}
+
+.achievement-list li {
+    margin-bottom: 1rem;
+    border-left: 3px dotted var(--neon-purple);
+    padding-left: 1rem;
+    transition: transform 0.3s;
+}
+
+.achievement-list li:hover {
+    transform: translateX(10px);
+    color: var(--white);
+    text-shadow: 0 0 10px var(--neon-purple);
+}
 </style>
 </head>
+<link rel="icon" href="favicon.png" type="image/png">
 <body>
     <div id="loading-screen">
         <style>
@@ -908,9 +948,17 @@ img, .team-member, .tech-card {
 
     <header>
         <nav>
-            <div class="logo" onclick="window.location.href='#top'" style="cursor: pointer;">R.U.G.V.E.D</div>
+          <a href="#home" class="logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+  <img src="RUGVED logo.png" alt="R.U.G.V.E.D Logo" style="height: 40px;">
+  <span style="color: var(--neon-blue); text-shadow: 0 0 10px var(--neon-blue); font-weight: bold; font-size: 2rem;">R.U.G.V.E.D</span>
+</a>
+
+</div>
+
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#achievements">Achievements</a></li>
                 <li><a href="#technologies">Subsystems</a></li>
                 <li><a href="#team">Team</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -924,15 +972,58 @@ img, .team-member, .tech-card {
     <!-- Main Content -->
     <main>
         <!-- Hero Section -->
-        <section class="hero" id="home">
-            <h1 class="hero-title">R.U.G.V.E.D</h1>
-            <p class="hero-subtitle">Remote Unmanned Ground Vehicular Electronic Defence Systems</p>
-            <button class="cta-button" onclick="location.href='#projects'">Explore Our Tech</button>
+       <section class="hero" id="home" style="position:relative;">
+  <!-- Vanta Background Container -->
+  <div id="vanta-bg" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:0;">
+    <!-- Dark overlay ONLY over Vanta -->
+    <div style="position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1;"></div>
+  </div>
 
-        </section>
+  <!-- Foreground content -->
+  <div style="position:relative; z-index:2; text-align:center;">
+    <h1 class="hero-title">R.U.G.V.E.D</h1>
+    <p class="hero-subtitle">Remote Unmanned Ground Vehicular Electronic Defence Systems</p>
+    <button class="cta-button" onclick="location.href='#projects'">Explore Our Tech</button>
+  </div>
+</section>
+
+
+        <!-- About Us Section -->
+<section class="section" id="about">
+    <h2 class="section-title">About Us</h2>
+    <p style="max-width: 800px; margin: auto; text-align: center; font-size: 1.2rem; color: var(--white); text-shadow: 0 0 5px var(--white);">
+        R.U.G.V.E.D is a student-led defense tech initiative focused on creating Remote Unmanned Ground Vehicular Electronic Defence systems. Our mission is to bridge the gap between innovation and application in military-grade automation, AI, robotics, and electronics.
+    </p>
+</section>
+
 
         <!-- Technologies Section -->
-       <section class="section" id="technologies">
+       <section class="section" id="achievements">
+    <h2 class="section-title">Our Achievements</h2>
+    <ul class="achievement-list">
+        <li> Secured Top 5 in Smart India Hackathon 2024</li>
+        <li> Successfully deployed WALRUS 2.0 prototype</li>
+        <li> Featured in National Defence Expo 2025</li>
+        <li> Patent filed for AI-based Terrain Navigation</li>
+        <li> Eyantra (2023-24) - IIT Bombay - All India Rank 10</li>
+        <li> Guiding Gaze 2023 - OpenCV Al International Competition International Rank 7</li>
+        <li> Al for Change 2024 - Online Hackathon - Winners</li>
+        <li> Line Following Robot 2024 - BITS Goa - Top 7</li>
+        <li> 1st place in Pragyaan Fusion Hackathon, NIT-Trichy 2021, (Mechanical, Electrical divisions)</li>
+        <li> 1st place in 'Covideate', IIT Bombay's Techfest 2020</li>
+        <li> 1st place in Def Hacks Global 2.0, hosted by Major League Hacking internationally - 2020</li>
+    </ul>
+    <!-- Research Papers Subsection -->
+<h3 class="subsystem-title">Research Papers</h3>
+<ul class="achievement-list">
+    <li> Autonomous Terrain Navigation Using AI - IEEE, 2024</li>
+    <li> Optimized Pathfinding in UGV Systems - ICRA, 2023</li>
+    <li> Reinforcement Learning for Obstacle Avoidance - Elsevier Robotics Journal, 2023</li>
+</ul>
+
+</section>
+
+<section class="section" id="technologies">
             <h2 class="section-title">Our Subsystems</h2>
             <div class="tech-grid">
     <div class="tech-card subsystem-link" data-subsystem="theboard">
@@ -998,6 +1089,7 @@ img, .team-member, .tech-card {
             
             <!-- Subsystem Navigation -->
             <div class="subsystem-nav">
+                <button class="subsystem-btn " data-subsystem="facultyAdvisor">Faculty Advisors</button>
                 <button class="subsystem-btn " data-subsystem="theboard">The Board</button>
                 <button class="subsystem-btn" data-subsystem="electronics">Electronics</button>
                 <button class="subsystem-btn" data-subsystem="research">R&D</button>
@@ -1005,6 +1097,32 @@ img, .team-member, .tech-card {
                 <button class="subsystem-btn" data-subsystem="mechanical">Mechanical</button>
                 <button class="subsystem-btn" data-subsystem="management">Management</button>
             </div>
+
+            <div class="team-subsystem" id="facultyAdvisor-team">
+                <h3 class="subsystem-title">Faculty Advisors</h3>
+                <div class="team-grid">
+                    <div class="team-member">
+                         <img src="Niraj Dewangan.jpg" alt="Team Lead and Technical Head" class="member-img">
+                        <h3 class="member-name">Dr. Niraj Dewangan</h3>
+                        <p class="member-role">Faculty Advisor</p>
+                        <p></p>
+                        
+                        <div class="social-links">
+                            <a href="https://www.manipal.edu/mit/department-faculty/faculty-list/dr--niraj-dewangan---department-of-biomedical-engg--mit---manipa/_jcr_content.html" target="_blank" class="social-icon"><i class="fab fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                         <img src="Karthik Rao.jpg" alt="Team Lead and Technical Head" class="member-img">
+                        <h3 class="member-name">Dr. Karthik Rao</h3>
+                        <p class="member-role">Faculty Advisor</p>
+                        <p></p>
+                        <div class="social-links">
+                            <a href="https://www.manipal.edu/mit/department-faculty/faculty-list/karthik-mc---department-of-mechatronics--mit---manipal-academy-o/_jcr_content.html" target="_blank" class="social-icon"><i class="fab fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
               <div class="team-subsystem" id="theboard-team">
                 <h3 class="subsystem-title">The Board</h3>
                 <div class="team-grid">
@@ -1067,6 +1185,18 @@ img, .team-member, .tech-card {
                             <a href="https://www.linkedin.com/in/janav-bhasin-9b3507310" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
                         </div>
                     </div>
+
+                    <div class="team-member">
+                        <img src="sahil mohammed.png" alt="Robotics Head" class="member-img">
+                        <h3 class="member-name">Mohammed Sahil Nakhuda</h3>
+                        <p class="member-role">Robotics Head</p>
+                        <p></p>
+                        <div class="social-links">
+                            <a href="https://github.com/geeksahil53" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                            <a href="https://in.linkedin.com/in/mohammed-sahil-nakhuda" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+
                     <div class="team-member">
                         <img src="Abhayinder Singh.jpeg" alt="Mechanical Head" class="member-img">
                         <h3 class="member-name">Abhayinder Singh </h3>
@@ -1585,32 +1715,43 @@ img, .team-member, .tech-card {
         </section>
         <!-- Contact Section -->
         <section class="section contact" id="contact">
-            <h2 class="section-title">Contact Us</h2>
-            <form class="contact-form">
-                <div class="form-group">
-                    <input type="text" class="form-input" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-input" placeholder="Your Email" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-input" placeholder="Subject" required>
-                </div>
-                <div class="form-group">
-                    <textarea class="form-input" rows="5" placeholder="Your Message" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
-        </section>
+        
+         <h2 class="section-title">Contact Us</h2>
+
+         <form action="https://formsubmit.co/YOUR_EMAIL@example.com" method="POST" class="contact-form">
+          <div class="form-group">
+          <input type="text" name="name" class="form-input" placeholder="Your Name" required>
+          </div>
+         <div class="form-group">
+          <input type="email" name="email" class="form-input" placeholder="Your Email" required>
+        </div>
+          <div class="form-group">
+         <input type="text" name="subject" class="form-input" placeholder="Subject">
+          </div>
+        <div class="form-group">
+         <textarea name="message" class="form-input" placeholder="Your Message" rows="5" required></textarea>
+         </div>
+
+    <!-- Optional: Hidden FormSubmit Controls -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="https://yourusername.github.io/thank-you.html">
+
+    <button type="submit" class="submit-btn">Send</button>
+  </form>
+</section>
+
     </main>
 
-    <footer>
+    
+
+
+<footer>
         <div class="footer-logo" onclick="window.location.href='#top'" style="cursor: pointer;">R.U.G.V.E.D</div>
         <div class="social-links">
-            <a href="#" class="social-icon">FB</a>
-            <a href="#" class="social-icon">TW</a>
-            <a href="https://www.instagram.com/rugved_systems?igsh=MWo4ZHVyY2ZvZm4w" class="social-icon">IG</a>
-            <a href="https://www.linkedin.com/company/rugved-systems/" class="social-icon">LI</a>
+            <a href="https://www.instagram.com/rugved_systems?igsh=MWo4ZHVyY2ZvZm4w" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#top"><img src="RUGVED logo.png" alt="Logo" class="social-icon" style="height: 34px; margin: 0 20px; vertical-align: middle; display: inline-block;"></a>            
+            <a href="https://www.linkedin.com/company/rugved-systems/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
         </div>
         <p class="copyright">© 2025 R.U.G.V.E.D Defense Technology Team. All Rights Reserved.</p>
     </footer>
@@ -1856,5 +1997,49 @@ img, .team-member, .tech-card {
 
         });
     </script>
+
+<script>
+    function submitToGoogleSheet(event) {
+        event.preventDefault();
+        const form = event.target;
+        const data = {
+            name: form.name.value,
+            email: form.email.value,
+            message: form.message.value
+        };
+
+        fetch('YOUR_GOOGLE_SCRIPT_URL_HERE', {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(res => {
+            alert("Feedback submitted successfully!");
+            form.reset();
+        }).catch(err => {
+            alert("Something went wrong. Please try again.");
+            console.error(err);
+        });
+    }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+<script>
+VANTA.GLOBE({
+  el: "#vanta-bg",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00,
+  color: 0xafc3c9,
+  color2: 0x18c445,// Neon Blue (matches your theme)
+  size: 1.00
+});
+</script>
+
 </body>
 </html>
